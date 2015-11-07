@@ -15,6 +15,9 @@ gem 'sass-rails', '>= 3.2'
 
 gem 'devise'
 
+# For notification
+gem 'toastr-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
