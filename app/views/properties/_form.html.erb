@@ -1,0 +1,76 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Your Property
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <%= form_for @property, html: {multipart: true} do |f| %>
+
+        <div class="row select">
+          <div class="form-group">
+            <label>Property Type</label>
+            <!--[key, value]-->
+            <%= f.select :property_type, [["Appartment", "Appartment"], ["Unit", "Unit"]], id: 'property_type', prompt: 'Select...', class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Address</label>
+              <%= f.text_field :address, placeholder: 'Greenlaw Crescent', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Suburb</label>
+              <%= f.text_field :suburb, placeholder: 'Berwick', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>State</label>
+              <!--[key, value]-->
+              <%= f.select :state, [["QLD", "QLD"],["NSW", "NSW"], ["SA", "SA"], ["TAS", "TAS"], ["VIC", "VIC"], ["WA", "WA"]], id: 'state', prompt: 'Select...', class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bedrooms</label>
+              <%= f.select :bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], prompt: 'Select...', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bathrooms</label>
+              <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], prompt: 'Select...', class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Car Spaces</label>
+              <%= f.select :car_spaces, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], prompt: 'Select...', class: 'form-control' %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label><%= f.check_box :active %> Active</label>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+</div>
