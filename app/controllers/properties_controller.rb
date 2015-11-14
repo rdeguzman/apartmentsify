@@ -42,7 +42,7 @@ class PropertiesController < ApplicationController
       @property = Property.find(params[:id])
     end
 
-    def room_params
+    def property_params
       params.require(:property).permit(
           :property_type,
           :address, :suburb, :postcode, :state,
