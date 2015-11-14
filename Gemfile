@@ -18,6 +18,8 @@ gem 'devise'
 # For notification
 gem 'toastr-rails'
 
+gem 'paperclip'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
