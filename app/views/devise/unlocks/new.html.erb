@@ -4,7 +4,7 @@
     <h2>Resend unlock instructions</h2>
 
     <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render 'shared/devise_message' %>
+      <%= render 'shared/error_message' %>
 
       <div class="field">
         <%= f.email_field :email, autofocus: true,  :class => "form-control", :placeholder => "Email" %>
