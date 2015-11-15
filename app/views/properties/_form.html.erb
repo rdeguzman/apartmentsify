@@ -4,6 +4,7 @@
   </div>
   <div class="panel-body">
     <div class="container">
+      <%= render 'shared/error_message', resource: @property %>
 
       <%= form_for @property, html: {multipart: true} do |f| %>
 
