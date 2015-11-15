@@ -20,17 +20,36 @@ class PropertiesController < ApplicationController
     @property = current_user.properties.build(property_params)
 
     if @property.save
-      redirect_to @property, notice: "Saved..."
+      if params[:images]
+        params[:images].each do |image|
+          @property.photos.create(image: image)
+        end
+      end
+
+      @photos = @property.photos
+      redirect_to edit_property_path(@property), notice: "Saved..."
     else
       render :new
     end
   end
 
   def edit
+    if current_user.id == @property.user.id
+      @photos = @property.photos
+    else
+      redirect_to root_path, notice: "You don't have permission."
+    end
   end
 
   def update
     if @property.update(property_params)
+
+      if params[:images]
+        params[:images].each do |image|
+          @property.photos.create(image: image)
+        end
+      end
+
       redirect_to edit_property_path(@property), notice: "Updated..."
     else
       render :edit
