@@ -20,6 +20,10 @@ gem 'toastr-rails'
 
 gem 'paperclip'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
