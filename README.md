@@ -33,3 +33,9 @@ Currently not using capistrano
 		cd /srv/rails/apartmentsify/current/config/initializers
 		git pull
 		sudo /etc/init.d/apache2 restart
+		
+## Test Users
+
+	rupert@datalinktech.com.au - Normal User
+	rupert@2rmobile.com - Facebook Landlord
+	rndguzmanjr@gmail.com - Facebook Tenant		
