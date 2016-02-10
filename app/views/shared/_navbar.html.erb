@@ -44,7 +44,9 @@
           <a href="#"><i class="fa fa-envelope-o"></i> Messages</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-home fa-lg"></i> Become a Landlord</a>
+          <%= link_to landlord_become_path(current_user.id) do %>
+            <i class="fa fa-home fa-lg"></i> Become a Landlord
+          <% end %>
         </li>
 
       </ul>

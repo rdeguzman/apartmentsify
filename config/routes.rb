@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :properties
   resources :photos
   resources :users, only: :show
+
+  get 'landlord/become' => 'landlord/become'
+  post 'landlord/register' => 'landlord/register'
+  get 'landlord/properties' => 'landlord/properties'
 end
