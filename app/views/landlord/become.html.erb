@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+
+		<div class="panel panel-default">
+
+			<div class="panel-heading">Become a Landlord</div>
+
+			<div class="panel-body">
+        The additional terms and conditions set out below ("Terms") form part of the Terms of Use Agreement (the "Agreement”) between Apartmentsify Pty Ltd ACN: 000 111 222, (the "Company”, "we", "us") and you (the "User”) and concern the User’s use of specific services ("Landlord Services") made available by the Company to the owners of properties registered on www.apartmentsify.com (the "Site”), which is owned and operated by the Company. By using the Site and/ or the Landlord Services, you are agreeing to be bound by these Terms. If you do not agree to all of the Terms, please do not use any of our Landlord Services.
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-2 col-md-offset-4">
+    <%= link_to "Cancel", root_path, :class => "btn btn-primary btn-lg btn-block" %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to "Agree", landlord_register_path(current_user.id), :method => :post, :class => "btn btn-success btn-lg btn-block" %>
+  </div>
+</div>
