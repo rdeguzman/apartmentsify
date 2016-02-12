@@ -18,6 +18,6 @@
     <%= link_to "Cancel", root_path, :class => "btn btn-primary btn-lg btn-block" %>
   </div>
   <div class="col-md-2">
-    <%= link_to "Agree", landlord_register_path(current_user.id), :method => :post, :class => "btn btn-success btn-lg btn-block" %>
+    <%= link_to "Agree", landlord_register_path(id: current_user.id), :method => :post, :class => "btn btn-success btn-lg btn-block" %>
   </div>
 </div>
