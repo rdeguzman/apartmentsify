@@ -11,4 +11,8 @@ class LandlordController < ApplicationController
     redirect_to landlord_properties_path(id: user.id)
   end
 
+  def properties
+    @properties = Property.where(user_id: current_user.id)
+  end
+
 end
