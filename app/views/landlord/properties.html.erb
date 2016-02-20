@@ -1,20 +1,41 @@
-<div class="row">
+<div class="container">
+  <div class="row">
+    <h3>My Properties <%= link_to "Add Property", new_property_path, class: "btn btn-primary" %> </h3>
+  </div>
 
-  <h1>My Properties</h1>
-
-  <%= link_to "Add Property", new_property_path %>
-
-  <ul class="list-inline">
+  <div id="properties" class="row list-group">
 
     <% @properties.each do |p| %>
+      <div class="item col-xs-4 col-lg-4">
+        <div class="thumbnail">
 
-      <li>
-        <%= p.address %>, <%= p.suburb %>
-      </li>
+          <%= image_tag p.photos.first.image.url(), class: "list-group-image", alt: "" %>
 
+          <div class="caption">
+
+            <h4 class="list-group-item-heading"><%= p.address %>, <%= p.suburb %></h4>
+
+            <p class="list-group-item-text">
+              <%= truncate(p.description, length: 180, separator: ' ') %>
+            </p>
+
+            <br/>
+
+            <div class="row">
+
+              <div class="col-xs-12 col-md-6">
+                <p class="lead">$385 pw</p>
+              </div>
+
+              <div class="col-xs-12 col-md-6">
+                <%= link_to "More Info", edit_property_path(p.id), class:"btn btn-success" %>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     <% end %>
-
-  </ul>
-
-
+  </div>
 </div>
