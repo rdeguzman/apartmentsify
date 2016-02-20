@@ -57,17 +57,21 @@
 
             <ul class="dropdown-menu">
 
-              <li><%= link_to "My Profile",  user_path(current_user.id) %></li>
-              <li><%= link_to "Log Out",
-                              destroy_user_session_path,
-                              method: :delete %></li>
+              <li>
+                <%= link_to user_path(current_user.id) do %>
+                  <i class="fa fa-user fa-lg"></i> My Profile
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-lg"></i> Log Out
+                <% end %>
             </ul>
+
           </li>
 
-
-
         <% end %>
-
 
       </ul>
 
