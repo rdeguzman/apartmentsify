@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @photos = @property.photos
   end
 
   def new
