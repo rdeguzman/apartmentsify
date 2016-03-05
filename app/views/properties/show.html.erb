@@ -1,41 +1,65 @@
 <div id="content_main" class="row">
 
-  <div id="primary" class="col-md-8">
+  <div class="col-md-8">
 
-    <p><%= @property.full_address %></p>
+    <div id="primary" class="wrapper">
 
-    <p>
-      <ul class="list-inline">
-        <li>
-          <i class="fa fa-bed"></i>
-          <%= @property.bedrooms %>
-        </li>
+      <p><%= @property.full_address %></p>
 
-        <li>
-          <i class="fa fa-male"></i><i class="fa fa-female"></i>
-          <%= @property.bathrooms %>
-        </li>
-
-        <li>
-          <i class="fa fa-car"></i>
-          <%= @property.car_spaces %>
-        </li>
-
-        <li>
-          <%= @property.property_type %>
-        </li>
-      </ul>
-    </p>
-
-    <div>
       <p>
-        <%= @property.description %>
+        <ul class="list-inline">
+          <li>
+            <i class="fa fa-bed"></i>
+            <%= @property.bedrooms %>
+          </li>
+
+          <li>
+            <i class="fa fa-male"></i><i class="fa fa-female"></i>
+            <%= @property.bathrooms %>
+          </li>
+
+          <li>
+            <i class="fa fa-car"></i>
+            <%= @property.car_spaces %>
+          </li>
+
+          <li>
+            <%= @property.property_type %>
+          </li>
+        </ul>
       </p>
+
+      <div>
+        <p>
+          <%= @property.description %>
+        </p>
+      </div>
+
     </div>
 
   </div>
 
-  <div id="secondary" class="col-md-4">
+  <div class="col-md-4">
+
+    <div id="secondary" class="wrapper">
+
+      <ul>
+
+        <li>
+          <%= link_to 'Print' %>
+        </li>
+
+        <li>
+          <%= link_to 'Save' %>
+        </li>
+
+        <li>
+          <%= link_to 'Send to a Friend' %>
+        </li>
+
+      </ul>
+
+    </div>
 
   </div>
 
