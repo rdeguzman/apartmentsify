@@ -28,7 +28,7 @@ class PropertiesController < ApplicationController
       end
 
       @photos = @property.photos
-      redirect_to edit_property_path(@property), notice: "Saved..."
+      redirect_to property_path(@property), notice: "Saved..."
     else
       render :new
     end
@@ -51,7 +51,7 @@ class PropertiesController < ApplicationController
         end
       end
 
-      redirect_to edit_property_path(@property), notice: "Updated..."
+      redirect_to property_path(@property), notice: "Updated..."
     else
       render :edit
     end
