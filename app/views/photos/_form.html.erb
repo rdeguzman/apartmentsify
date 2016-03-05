@@ -1,28 +1,27 @@
 <% if @photos %>
 
-	<div class="row">
-		<% @photos.each do |photo| %>
-			<div class="col-md-4">
-				<div class="panel panel-default">
+  <div class="row photo_container">
 
-				  <div class="panel-heading preview">
-				  	<%= image_tag photo.image.url() %>
-				  </div>
+    <ul class="list-inline">
 
-				  <div class="panel-body">
-				  	<span class="pull-right">
-              <%= link_to photo,
-                          remote: true,
-                          method: :delete,
-                          data: {confirm: "Are you sure?"} do %>
-				  		  <i class="fa fa-times fa-lg"></i>
-              <% end %>
-				  	</span>
-				  </div>
+      <% @photos.each do |photo| %>
+        <li class="photo_wrapper">
+          <p>
+            <%= image_tag photo.image.url(), width: 300, height: 200 %>
+          </p>
+          <p class="pull-right">
+            <%= link_to photo,
+                        remote: true,
+                        method: :delete,
+                        data: {confirm: "Are you sure?"} do %>
+              <i class="fa fa-times fa-lg"></i>
+            <% end %>
+          </p>
 
-				</div>
-			</div>
-		<% end %>
+        </li>
+      <% end %>
+
+    </ul>
 	</div>
 
 <% end %>
