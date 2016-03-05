@@ -14,4 +14,8 @@ class Property < ActiveRecord::Base
   validates :bedrooms, presence: true
   validates :bathrooms, presence: true
   validates :car_spaces, presence: true
+
+  def full_address
+    return "#{address}, #{suburb}, #{state.upcase}, #{postcode}"
+  end
 end

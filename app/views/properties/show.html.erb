@@ -1,2 +1,42 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<div id="content_main" class="row">
+
+  <div id="primary" class="col-md-8">
+
+    <p><%= @property.full_address %></p>
+
+    <p>
+      <ul class="list-inline">
+        <li>
+          <i class="fa fa-bed"></i>
+          <%= @property.bedrooms %>
+        </li>
+
+        <li>
+          <i class="fa fa-male"></i><i class="fa fa-female"></i>
+          <%= @property.bathrooms %>
+        </li>
+
+        <li>
+          <i class="fa fa-car"></i>
+          <%= @property.car_spaces %>
+        </li>
+
+        <li>
+          <%= @property.property_type %>
+        </li>
+      </ul>
+    </p>
+
+    <div>
+      <p>
+        <%= @property.description %>
+      </p>
+    </div>
+
+  </div>
+
+  <div id="secondary" class="col-md-4">
+
+  </div>
+
+</div>
