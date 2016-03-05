@@ -1,20 +1,46 @@
 <% if @photos %>
 
-	<div class="row">
-		<% @photos.each do |photo| %>
+  <div class="col-md-12">
 
-			<div class="col-md-4">
+    <div class="carousel slide article-slide" id="article-photo-carousel">
 
-				<div class="panel panel-default">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner cont-slider">
 
-				  <div class="panel-heading preview">
-				  	<%= image_tag photo.image.url() %>
-				  </div>
+        <% @photos.each do |photo| %>
 
-				</div>
+          <%= content_tag :div,
+                          class: @photos.index(photo) == 0 ? 'item active' : 'item' do %>
+            <%= image_tag photo.image.url(), alt: "", title: "" %>
+          <% end %>
 
-			</div>
-		<% end %>
-	</div>
+        <% end %>
+
+      </div>
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+
+        <% @photos.each do |photo| %>
+
+          <li class="<%=@photos.index(photo) == 0 ? 'active' : ' ' %>"
+              data-slide-to="<%= @photos.index(photo) %>"
+              data-target="#article-photo-carousel">
+
+            <%= image_tag photo.image.url() %>
+
+          </li>
+
+        <% end %>
+
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    $('.carousel').carousel({
+      interval: false
+    });
+  </script>
 
 <% end %>
