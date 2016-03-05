@@ -30,7 +30,7 @@ Before deploying, ensure to precompile the assets and commit
 
 Currently not using capistrano
 
-		cd /srv/rails/apartmentsify/current/config/initializers
+		cd /srv/rails/apartmentsify/current/
 		git pull
 		sudo /etc/init.d/apache2 restart
 		
