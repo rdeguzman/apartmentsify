@@ -12,6 +12,13 @@ body {
 	width: 80%;
 }
 
+/* SITE WIDE */
+span.main-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
 /* HOME PAGE */
 .intro-header {
   text-align: center;
@@ -103,14 +110,6 @@ body {
   border: 1px solid #e5e5e5;
 }
 
-.panel-heading {
-  span.title {
-    font-size: 24px;
-    font-weight: 500;
-    margin-left: 10px;
-  }
-}
-
 /* IMAGES for AVATARS */
 .avatar-small {
 	width: 28px;
@@ -126,5 +125,53 @@ body {
 
 .avatar-full {
 	width: 100%;
+}
+
+/* PROPERTY DETAILS */
+.content-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 30px;
+}
+
+.box-content{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #ffffff;
+}
+
+#primary-content {
+  .base-info {
+    width: 100%;
+    overflow: auto;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .price-info {
+    color: #ff383c;
+    margin-right: 10px;
+  }
+
+  .room-info {
+    width: 100%;
+  }
+
+  .description {
+    padding: 10px;
+    //white-space: pre-wrap;
+  }
+}
+
+#screening-criteria {
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .answer {
+    font-size: 24px;
+    font-weight: bold;
+  }
 }
 

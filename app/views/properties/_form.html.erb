@@ -22,11 +22,19 @@
           </div>
         </div>
         <div class="col-md-4">
+          <div class="form-group">
+            <label>Weekly Rent</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <%= f.text_field :weekly_rent, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
           <label>
             <%= f.check_box :active %> Active
           </label>
         </div>
-        <div class="col-md-4">&nbsp;</div>
       </div>
 
       <div class="row">

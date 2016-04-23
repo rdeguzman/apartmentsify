@@ -1,6 +1,7 @@
 class Property < ActiveRecord::Base
   belongs_to :user
   has_many :photos
+  has_one  :screening_criteria
 
   validates :property_type, presence: true
 
@@ -17,5 +18,9 @@ class Property < ActiveRecord::Base
 
   def full_address
     return "#{address}, #{suburb}, #{state.upcase}, #{postcode}"
+  end
+
+  def weekly_rent_formatted
+    return "$ #{weekly_rent} pw"
   end
 end

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :photos
   resources :users, only: :show
 
+  resources :screening_criterias, only: [:edit, :create, :destroy]
+
   get 'landlord/become' => 'landlord/become'
   post 'landlord/register' => 'landlord/register'
   get 'landlord/properties' => 'landlord/properties'

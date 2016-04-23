@@ -2,73 +2,83 @@
   <%= render 'photos/list' %>
 </div>
 
-<div id="content_main" class="row">
+<div id="primary-content" class="row content-wrapper ">
 
-  <div class="col-md-8">
+  <div class="col-md-8 box-content">
 
-    <div id="primary" class="wrapper">
+    <div class="base-info">
+      <span class="address-info pull-left"><%= @property.full_address %></span>
 
-      <p><%= @property.full_address %></p>
-
-      <p>
-        <ul class="list-inline">
-          <li>
-            <i class="fa fa-bed"></i>
-            <%= @property.bedrooms %>
-          </li>
-
-          <li>
-            <i class="fa fa-male"></i><i class="fa fa-female"></i>
-            <%= @property.bathrooms %>
-          </li>
-
-          <li>
-            <i class="fa fa-car"></i>
-            <%= @property.car_spaces %>
-          </li>
-
-          <li>
-            <%= @property.property_type %>
-          </li>
-        </ul>
-      </p>
-
-      <div>
-        <p>
-          <%= @property.description %>
-        </p>
-      </div>
+      <span class="price-info pull-right"><%= @property.weekly_rent_formatted %></span>
 
     </div>
+
+    <div class="room-info">
+      <ul class="list-inline">
+        <li>
+          <i class="fa fa-bed"></i>
+          <%= @property.bedrooms %>
+        </li>
+
+        <li>
+          <i class="fa fa-male"></i><i class="fa fa-female"></i>
+          <%= @property.bathrooms %>
+        </li>
+
+        <li>
+          <i class="fa fa-car"></i>
+          <%= @property.car_spaces %>
+        </li>
+
+        <li>
+          <%= @property.property_type %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="description">
+      <%= @property.description %>
+    </div>
+
+    <%= link_to 'Edit Property Info', edit_property_path(@property.id), class: 'btn btn-primary btn-lg' %>
 
   </div>
 
   <div class="col-md-4">
+  </div>
 
-    <div id="secondary" class="wrapper">
+</div>
 
-      <ul>
+<div id="screening-criteria" class="row content-wrapper">
 
-        <li>
-          <%= link_to 'Edit', edit_property_path(@property.id) %>
-        </li>
+  <div class="col-md-8 box-content">
 
-        <li>
-          <%= link_to 'Print' %>
-        </li>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <p class="answer"><%= @screening_criteria.age_group %></p>
+        <p><i class="fa fa-group fa-4x"></i></p>
+        <p class="title">Age Group</p>
+      </div>
 
-        <li>
-          <%= link_to 'Save' %>
-        </li>
+      <div class="col-md-4">
+        <p class="answer"> &gt; $ <%= @screening_criteria.acceptable_monthly_income %></p>
+        <p><i class="fa fa-dollar fa-4x"></i></p>
+        <p class="title">Acceptable Monthly Income</p>
+      </div>
 
-        <li>
-          <%= link_to 'Send to a Friend' %>
-        </li>
-
-      </ul>
-
+      <div class="col-md-4">
+        <p class="answer"> <%= @screening_criteria.credit_score %> - </p>
+        <p><i class="fa fa-star fa-4x"></i></p>
+        <p class="title">Credit Score</p>
+      </div>
     </div>
 
+    <br/><br/>
+    <%= link_to 'Edit Screening Criteria', edit_screening_criteria_path(@screening_criteria.id), class: 'btn btn-primary btn-lg' %>
+
+  </div>
+
+  <div class="col-md-4">
   </div>
 
 </div>

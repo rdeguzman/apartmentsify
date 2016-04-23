@@ -11,6 +11,8 @@ class PropertiesController < ApplicationController
 
   def show
     @photos = @property.photos
+
+    @screening_criteria = @property.screening_criteria
   end
 
   def new
@@ -21,6 +23,8 @@ class PropertiesController < ApplicationController
     @property = current_user.properties.build(property_params)
 
     if @property.save
+      @property.create_screening_criteria(user_id: current_user.id)
+
       if params[:images]
         params[:images].each do |image|
           @property.photos.create(image: image)
@@ -68,7 +72,7 @@ class PropertiesController < ApplicationController
           :address, :suburb, :postcode, :state,
           :description,
           :bedrooms, :bathrooms, :car_spaces,
-          :active
+          :active, :weekly_rent
       )
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212210028) do
+ActiveRecord::Schema.define(version: 20160423083910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,11 +40,25 @@ ActiveRecord::Schema.define(version: 20160212210028) do
     t.integer  "car_spaces"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "weekly_rent",   default: 0, null: false
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id", using: :btree
+
+  create_table "screening_criteria", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "property_id"
+    t.string   "age_group",                 default: "ANY"
+    t.integer  "acceptable_monthly_income", default: 2000
+    t.integer  "credit_score"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
+
+  add_index "screening_criteria", ["property_id"], name: "index_screening_criteria_on_property_id", using: :btree
+  add_index "screening_criteria", ["user_id"], name: "index_screening_criteria_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
