@@ -1,11 +1,15 @@
-<div class="container">
-  <div class="row">
-    <h3>My Properties <%= link_to "Add Property", new_property_path, class: "btn btn-primary" %> </h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="title">My Properties</span>
+    <%= link_to "Add Property", new_property_path, class: "btn btn-primary pull-right" %>
   </div>
+</div>
 
-  <div id="properties" class="row list-group">
+<div id="properties" class="row">
+  <div class="list-group">
 
     <% @properties.each do |p| %>
+
       <div class="item col-xs-4 col-lg-4">
         <div class="thumbnail">
 
@@ -36,6 +40,8 @@
           </div>
         </div>
       </div>
+
     <% end %>
+
   </div>
 </div>
