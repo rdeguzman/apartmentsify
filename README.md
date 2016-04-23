@@ -38,4 +38,6 @@ Currently not using capistrano
 
 	rupert@datalinktech.com.au - Normal User
 	rupert@2rmobile.com - Facebook Landlord
-	rndguzmanjr@gmail.com - Facebook Tenant		
+	rndguzmanjr@gmail.com - Facebook Tenant
+	
+	2rmobilelandlord.com - Google Landlord		
