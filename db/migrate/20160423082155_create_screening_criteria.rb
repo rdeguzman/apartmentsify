@@ -1,6 +1,6 @@
 class CreateScreeningCriteria < ActiveRecord::Migration
   def change
-    create_table :screening_criteria do |t|
+    create_table :screening_criterias do |t|
       t.references  :user, index: true
       t.references  :property, index: true
 

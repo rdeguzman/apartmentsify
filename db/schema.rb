@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160423083910) do
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id", using: :btree
 
-  create_table "screening_criteria", force: :cascade do |t|
+  create_table "screening_criterias", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "property_id"
     t.string   "age_group",                 default: "ANY"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20160423083910) do
     t.datetime "updated_at",                                null: false
   end
 
-  add_index "screening_criteria", ["property_id"], name: "index_screening_criteria_on_property_id", using: :btree
-  add_index "screening_criteria", ["user_id"], name: "index_screening_criteria_on_user_id", using: :btree
+  add_index "screening_criterias", ["property_id"], name: "index_screening_criterias_on_property_id", using: :btree
+  add_index "screening_criterias", ["user_id"], name: "index_screening_criterias_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
