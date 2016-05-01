@@ -20,8 +20,5 @@ Rails.application.routes.draw do
   post 'landlord/register' => 'landlord/register'
   get 'landlord/properties' => 'landlord/properties'
 
-  namespace :landlord do
-    resources :screening_criterias, only: [:edit, :update, :destroy]
-  end
-
+  resources :screening_criterias, only: [:edit, :update]
 end
