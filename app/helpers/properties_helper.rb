@@ -12,6 +12,7 @@ module PropertiesHelper
       d[:bedrooms] = property.bedrooms
       d[:bathrooms] = property.bathrooms
       d[:car_spaces] = property.car_spaces
+      d[:cover_photo] = property.photos.first.image().url(:medium)
 
       records.push d
     end
