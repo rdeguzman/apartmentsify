@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   post 'landlord/register' => 'landlord/register'
   get 'landlord/properties' => 'landlord/properties'
 
+  get 'api/properties' => 'api/properties'
+
   resources :screening_criterias, only: [:edit, :update]
 end

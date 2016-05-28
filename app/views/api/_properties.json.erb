@@ -1,0 +1,2 @@
+<% data = { :total => @properties.size, :properties => format_properties(@properties) } %>
+<%= data.to_json.html_safe %>
