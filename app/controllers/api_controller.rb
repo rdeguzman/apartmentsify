@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  before_filter :allow_cors
+  after_filter :allow_cors
 
   def properties
     @properties = Property.all
