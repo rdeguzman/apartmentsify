@@ -12,6 +12,7 @@ module PropertiesHelper
       d[:bedrooms] = property.bedrooms
       d[:bathrooms] = property.bathrooms
       d[:car_spaces] = property.car_spaces
+      d[:description] = property.description
       d[:cover_photo] = 'http://apartmentsify.2rmobile.com' + property.photos.first.image().url(:medium)
 
       records.push d
